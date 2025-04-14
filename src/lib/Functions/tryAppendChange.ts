@@ -16,6 +16,7 @@ export function tryAppendChange(state: State, location: Location, cell: Compatib
             type: newCell.type,
             rowId: location.row.rowId,
             columnId: location.column.columnId
+            autoFill: state.autoFill
         } as CellChange);
     return { ...state };
 }
