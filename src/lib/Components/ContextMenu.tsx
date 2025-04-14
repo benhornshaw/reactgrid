@@ -77,7 +77,7 @@ export const ContextMenu: React.FC = () => {
       {contextMenuOptions.map(({ handler, id, label }, idx) => (
         <div
           key={idx}
-          className="rg-context-menu-option"
+          className={"rg-context-menu-option " + id}
           onPointerDown={(e) => e.stopPropagation()}
           onClick={() => {
             handler(
