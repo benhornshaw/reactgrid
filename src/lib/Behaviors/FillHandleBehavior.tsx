@@ -1,3 +1,4 @@
+//download
 import React from "react";
 import {
   Location,
@@ -107,8 +108,16 @@ export class FillHandleBehavior extends Behavior {
             selectedCells,
             cellsToFill
           );
+
+          if (state?.props?.onBeforeAutofill) {
+            cellsToFill = state.props.onBeforeAutofill(selectedCells, cellsToFill, column);
+          }
+
           cellsToFill =
             direction === "up" ? cellsToFill.reverse() : cellsToFill;
+
+          state.autoFill = true;
+
           state = this.fillColumn(state, column, cellsToFill);
         }
       });
@@ -134,8 +143,16 @@ export class FillHandleBehavior extends Behavior {
             selectedCells,
             cellsToFill
           );
+
+          if (state?.props?.onBeforeAutofill) {
+            cellsToFill = state.props.onBeforeAutofill(selectedCells, cellsToFill, row);
+          }
+
           cellsToFill =
             direction === "left" ? cellsToFill.reverse() : cellsToFill;
+
+          state.autoFill = true;
+
           state = this.fillRow(state, row, cellsToFill);
         }
       });
