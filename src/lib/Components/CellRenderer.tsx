@@ -69,21 +69,21 @@ export const CellRenderer: React.FC<CellRendererProps> = ({
     const storePropertyAndDefaultValue = storeBorderAndCell(borders, cell);
     const bordersWidth = getBorderProperties(storePropertyAndDefaultValue('width', '1px')),
         bordersStyle = getBorderProperties(storePropertyAndDefaultValue('style', 'solid')),
-        bordersColor = getBorderProperties(storePropertyAndDefaultValue('color', '#e8e8e8'));
+        //bordersColor = getBorderProperties(storePropertyAndDefaultValue('color', '#e8e8e8'));
 
     const bordersProps = {
         borderLeftWidth: bordersWidth.left,
         borderLeftStyle: bordersStyle.left,
-        borderLeftColor: bordersColor.left,
+        //borderLeftColor: bordersColor.left,
         borderRightWidth: bordersWidth.right,
         borderRightStyle: bordersStyle.right,
-        borderRightColor: bordersColor.right,
+        //borderRightColor: bordersColor.right,
         borderTopWidth: bordersWidth.top,
         borderTopStyle: bordersStyle.top,
-        borderTopColor: bordersColor.top,
+        //borderTopColor: bordersColor.top,
         borderBottomWidth: bordersWidth.bottom,
         borderBottomStyle: bordersStyle.bottom,
-        borderBottomColor: bordersColor.bottom
+        //borderBottomColor: bordersColor.bottom
     };
 
     const isMobile = isMobileDevice();
