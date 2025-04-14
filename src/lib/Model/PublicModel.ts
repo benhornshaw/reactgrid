@@ -119,6 +119,19 @@ export interface ReactGridProps {
      */
     readonly onCellsChanged?: (cellChanges: CellChange[]) => void;
 
+
+    /**
+     * `onBeforeAutofill` is called before autofill action is applied to the grid.
+     * It allows you to modify or validate the data that will be autofilled.
+     * 
+     * @param {any[]} selectedCells Array of data that will be autofilled
+     * @param {any[]} data Array of data that will be autofilled
+     * @param {Column | Row} The column object for which the autofill is being applied
+     * @returns {any[]} Modified or validated array of data
+     */
+    readonly onBeforeAutofill?: (selectedCells: any[], data: any[], item: Column | Row) => any[];
+
+
     /** 
      * Focus position has been changed
      * 
@@ -349,6 +362,8 @@ export type CellChange<TCell extends Cell = DefaultCellTypes & Cell> = TCell ext
         readonly previousCell: TCell;
         /** New content of the cell */
         readonly newCell: TCell;
+        /** New content of the cell */
+        readonly autoFill: boolean;
     }
     : never;
 
