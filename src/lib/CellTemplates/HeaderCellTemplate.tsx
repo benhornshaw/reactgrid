@@ -19,7 +19,7 @@ export class HeaderCellTemplate implements CellTemplate<HeaderCell> {
     }
 
     render(cell: Compatible<HeaderCell>, isInEditMode: boolean, onCellChanged: (cell: Compatible<HeaderCell>, commit: boolean) => void): React.ReactNode {
-        return cell.text;
+        return "ben" + cell.text;
     }
 
     isFocusable = (cell: Compatible<HeaderCell>): boolean => false;
