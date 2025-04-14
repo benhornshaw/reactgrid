@@ -215,6 +215,7 @@ const DropdownInput: FC<DIProps> = ({ onCellChanged, cell }) => {
                 valueContainer: (provided) => ({
                     ...provided,
                     padding: '0 8px',
+                    color: "inherit",
                     ...cell.styles?.valueContainer
                 }),
             }}
