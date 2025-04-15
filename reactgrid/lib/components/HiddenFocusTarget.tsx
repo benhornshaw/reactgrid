@@ -14,7 +14,7 @@ const HiddenFocusTarget = ({ rowIdx, colIdx }: { colIdx: number; rowIdx: number 
   }, [changedFocusedLocation]);
 
   return (
-    <div style={{ position: "absolute", bottom: 0, right: "50%" }}>
+    <div style={{ position: "absolute", bottom: 0, right: "50%", visibility: "hidden" }}>
       <input
         onKeyDown={(e) => {
           // Let a 'tab' key to be triggered only by the GridWrapper onKeyDown event
